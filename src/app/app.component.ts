@@ -8,14 +8,14 @@ import { Meta } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private availableLanguages = ['en', 'ar'];
+  private availableLanguages = ['en', 'ar', 'fr'];
   public selectedLanguage;
   constructor(
     public translate: TranslateService,
     private meta: Meta) {
     this.translate.addLangs([...this.availableLanguages]);
     this.translate.setDefaultLang('en');
-    this.selectedLanguage = localStorage.getItem('lang') ? localStorage.getItem('lang'): this.translate.getBrowserLang().match(/ar|en/) ? this.translate.getBrowserLang() :'en';
+    this.selectedLanguage = localStorage.getItem('lang') ? localStorage.getItem('lang'): this.translate.getBrowserLang().match(/ar|en|fr/) ? this.translate.getBrowserLang() :'en';
   }
 
   ngOnInit() {

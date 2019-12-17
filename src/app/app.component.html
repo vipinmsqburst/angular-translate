@@ -7,6 +7,7 @@
           <select class="form-control" name="lang" tabindex="1" [(ngModel)]="selectedLanguage" [autofocus]="true" (change)="OnChangeLanguage()">
             <option value="en">{{'English'||translate}}</option>
             <option value="ar">{{'Arabic'|translate}}</option>
+            <option value="fr">{{'French'|translate}}</option>
           </select>
           <label for="username" class="mt-2">{{'Username'|translate}}</label>
           <input type="text" name="username" class="form-control" tabindex="2" placeholder="{{'Enter Username'|translate}}">
