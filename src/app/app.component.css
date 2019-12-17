@@ -1,0 +1,10 @@
+.card{
+  padding: 10px;
+  margin-top: 10vw;
+}
+label{
+  font-size: .8rem;
+}
+button{
+  width: 100%;
+}
