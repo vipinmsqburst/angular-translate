@@ -3,7 +3,7 @@
     <div class="col col-sm-6 offset-sm-3 col-md-4 offset-md-4">
       <div class="card">
         <form class="form-group" [dir]="selectedLanguage == 'ar' ? 'rtl':'ltr'" [ngClass]="selectedLanguage == 'ar' ? 'text-right':'text-left'" >
-          <label for="lang">{{'Language'|translate}}</label>
+          <label for="lang">{{'Select Language'|translate}}</label>
           <select class="form-control" name="lang" tabindex="1" [(ngModel)]="selectedLanguage" [autofocus]="true" (change)="OnChangeLanguage()">
             <option value="en">{{'English'||translate}}</option>
             <option value="ar">{{'Arabic'|translate}}</option>
