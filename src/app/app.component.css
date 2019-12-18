@@ -8,3 +8,7 @@ label{
 button{
   width: 100%;
 }
+.rtl{
+  direction: rtl;
+  text-align: right;
+}
