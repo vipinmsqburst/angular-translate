@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
   public selectedLanguage;
   constructor(
     public translate: TranslateService,
-    private meta: Meta) {
+    private meta: Meta,
+    private titleService: Title) {
     this.translate.addLangs([...this.availableLanguages]);
     this.translate.setDefaultLang('en');
     this.selectedLanguage = localStorage.getItem('lang') ? localStorage.getItem('lang'): this.translate.getBrowserLang().match(/ar|en|fr/) ? this.translate.getBrowserLang() :'en';
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit {
     this.translate.use(lang);
     this.meta.updateTag({name: 'lang', content: lang});
     localStorage.setItem('lang', lang);
+    this.translate.get('Language').subscribe(data => {
+      this.titleService.setTitle(data);
+    });
   }
 
   OnChangeLanguage() {
